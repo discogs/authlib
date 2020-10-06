@@ -5,12 +5,12 @@ from .framework_integration import FrameworkIntegration
 from .errors import (
     OAuthError, MissingRequestTokenError, MissingTokenError,
     TokenExpiredError, InvalidTokenError, UnsupportedTokenTypeError,
-    MismatchingStateError,
+    MismatchingStateError, MissingStateError,
 )
 
 __all__ = [
     'BaseOAuth', 'BaseApp', 'RemoteApp', 'FrameworkIntegration',
     'OAuthError', 'MissingRequestTokenError', 'MissingTokenError',
     'TokenExpiredError', 'InvalidTokenError', 'UnsupportedTokenTypeError',
-    'MismatchingStateError',
+    'MismatchingStateError', 'MissingStateError',
 ]
