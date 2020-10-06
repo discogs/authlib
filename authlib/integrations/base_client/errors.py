@@ -28,3 +28,8 @@ class UnsupportedTokenTypeError(OAuthError):
 class MismatchingStateError(OAuthError):
     error = 'mismatching_state'
     description = 'CSRF Warning! State not equal in request and response.'
+
+
+class MissingStateError(OAuthError):
+    error = 'missing_state'
+    description = 'CSRF Warning! State missing in request.'

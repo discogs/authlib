@@ -4,6 +4,7 @@ from authlib.common.security import generate_token
 from authlib.consts import default_user_agent
 from .errors import (
     MismatchingStateError,
+    MissingStateError,
 )
 
 __all__ = ['BaseApp']
@@ -122,6 +123,8 @@ class BaseApp(object):
     def _retrieve_oauth2_access_token_params(self, request, params):
         request_state = params.pop('state', None)
         state = self.framework.get_session_data(request, 'state')
+        if not state:
+            raise MissingStateError()
         if state != request_state:
             raise MismatchingStateError()
         if state:
